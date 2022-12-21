@@ -10,13 +10,13 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s [%(name)s] %(leveln
 
 
 # Config from environment (see Dockerfile)
-DHT22_PIN = int(os.getenv('DHT22_PIN', '4'))
-DHT22_CHECK_EVERY = int(os.getenv('DHT22_CHECK_EVERY', 1))
+DHT22_PIN = int(os.getenv('DHT22_PIN', '17'))
+DHT22_CHECK_EVERY = int(os.getenv('DHT22_CHECK_EVERY', 300))
 MQTT_SERVICE_HOST = os.getenv('MQTT_SERVICE_HOST', 'mosquitto.local')
 MQTT_SERVICE_PORT = int(os.getenv('MQTT_SERVICE_PORT', 1883))
 MQTT_SERVICE_USER = os.getenv('MQTT_SERVICE_USER', None)
 MQTT_SERVICE_PASSWORD = os.getenv('MQTT_SERVICE_PASSWORD', None)
-MQTT_SERVICE_TOPIC = os.getenv('MQTT_SERVICE_TOPIC', 'home/livingroom')
+MQTT_SERVICE_TOPIC = os.getenv('MQTT_SERVICE_TOPIC', 'home/garage')
 MQTT_CLIENT_ID = os.getenv('MQTT_CLIENT_ID', os.getenv('HOSTNAME'))
 
 logger = logging.getLogger(MQTT_CLIENT_ID)
